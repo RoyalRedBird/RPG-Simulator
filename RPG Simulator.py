@@ -6,11 +6,15 @@ import time
 
 Player_HP = 100
 
-Monster_HP = 75
+Player_Mana = 100
+
+Monster_HP = 150
 
 HP_Potions = 3
 
-Vigor_Potions = 3
+Mana_Potions = 3
+
+def clip(Player_HP, min_val=0, max_val=100)
 
 while Player_HP > 0 and Monster_HP > 0:
 
@@ -24,7 +28,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print ("You dealt %s damage!" % Player_Damage)
 
-        Monster_HP = Monster_HP - Player_Damage
+        Monster_HP = Monster_HP - Player_Damage - Vigor_Bonus
 
         print ("The monster has %s health left!" % Monster_HP)
 
@@ -46,7 +50,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print ("You drink a health potion.")
 
-                Potion_Recovery = random.uniform (20,30)
+                Potion_Recovery = random.uniform(20,30)
 
                 Potion_Recovery = int(Potion_Recovery)
 
@@ -54,24 +58,70 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print ("You recover %s health." % Potion_Recovery)
 
-                Potions = Potions - 1
+                HP_Potions = HP_Potions - 1
 
-                print ("You have %s potions left!" % Potions)
+                print ("You have %s health potions left!" % HP_Potions)
 
                 print ("You now have %s health left." % Player_HP)
 
+        if Player_Item == ("Mana Potion"):
+
+            if Mana_Potions > 0:
+
+                print ("You drink a mana potion.")
+
+                Mana_Recovery = random.uniform(20,30)
+
+                Mana_Recovery = int(Mana_Recovery)
+
+                Player_Mana = Player_Mana + Mana_Recovery
+
+                print ("You recover %s mana." % Mana_Recovery)
+
+                Mana_Potions = Mana_Potions - 1
+
+                print ("You have %s mana potions left!" % Mana_Potions)
+
+                print ("You now have %s mana left in you." % Player_Mana)
+
             else:
 
-                print ("You are all out of potions!")
+                print ("You are all out of mana potions!")
 
-        if Player_Item == ("Vigor Potion"):
+    if Player_Action == ("Cast"):
 
-            if Vigor_Potions > 0:
+        Player_Cast = input("What spell will you cast?")
 
-                print ("You drink a vigor potion.")
+        if Player_Cast == ("Fireball"):
+
+            if Player_Mana > 20:
+
+                print("You cast a fireball!")
+
+                Fireball_Damage = random.uniform(20,35)
+
+                Fireball_Damage = int(Fireball_Damage)
+
+                Monster_HP = Monster_HP - Fireball_Damage
+
+                Player_Mana = Player_Mana - 20
+
+                print("You hit the monster for %s damage!" % Fireball_Damage)
+
+                print("The monster has %s health left!" % Monster_HP)
+
+                print("You have %s mana left in you." % Player_Mana)
+
+            else:
+
+                print("You don't have enough mana.")
+
+        if Player_Cast == ("Regen"):
+
+            if Player_Mana > 40:
 
                 
-        
+                   
     if Monster_HP <= 0:
 
         break
