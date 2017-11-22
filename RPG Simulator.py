@@ -14,8 +14,6 @@ HP_Potions = 3
 
 Mana_Potions = 3
 
-def clip(Player_HP, min_val=0, max_val=100)
-
 while Player_HP > 0 and Monster_HP > 0:
 
     Player_Action = input("What will you do?")
@@ -28,7 +26,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print ("You dealt %s damage!" % Player_Damage)
 
-        Monster_HP = Monster_HP - Player_Damage - Vigor_Bonus
+        Monster_HP = Monster_HP - Player_Damage
 
         print ("The monster has %s health left!" % Monster_HP)
 
@@ -120,7 +118,21 @@ while Player_HP > 0 and Monster_HP > 0:
 
             if Player_Mana > 40:
 
-                
+                print("You heal yourself using magic.")
+
+                Regen_Ammount = random.uniform(30,50)
+
+                Regen_Ammount = int(Regen_Ammount)
+
+                print("You heal for %s health." % Regen_Ammount)
+
+                Player_HP = Player_HP + Regen_Ammount
+
+                Player_Mana = Player_Mana - 40
+
+                print("You now have %s health left" % Player_HP)
+
+                print("You now have %s mana left in you" % Player_Mana)            
                    
     if Monster_HP <= 0:
 
