@@ -14,6 +14,10 @@ HP_Potions = 3
 
 Mana_Potions = 3
 
+Player_Item = ("None")
+
+Player_Cast = ("None")
+
 while Player_HP > 0 and Monster_HP > 0:
 
     Player_Action = input("What will you do?")
@@ -62,6 +66,10 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print ("You now have %s health left." % Player_HP)
 
+            else:
+
+                print ("You are all out of health potions!")
+
         if Player_Item == ("Mana Potion"):
 
             if Mana_Potions > 0:
@@ -92,7 +100,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         if Player_Cast == ("Fireball"):
 
-            if Player_Mana > 20:
+            if Player_Mana >= 20:
 
                 print("You cast a fireball!")
 
@@ -116,7 +124,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         if Player_Cast == ("Regen"):
 
-            if Player_Mana > 40:
+            if Player_Mana >= 40:
 
                 print("You heal yourself using magic.")
 
@@ -132,8 +140,8 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print("You now have %s health left" % Player_HP)
 
-                print("You now have %s mana left in you" % Player_Mana)            
-                   
+                print("You now have %s mana left in you" % Player_Mana)
+                
     if Monster_HP <= 0:
 
         break
