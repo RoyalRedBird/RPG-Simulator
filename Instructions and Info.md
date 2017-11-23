@@ -37,3 +37,7 @@ Type in "Regen" to magically regenerate health.
 Using "Regen" will restore between 30 and 50 health to you.
 It costs 40 mana to cast.
 
+There are a few hidden... references strewn about though.
+
+Remember the triple exclamation marks tho.
+
