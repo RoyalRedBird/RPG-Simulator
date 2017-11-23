@@ -64,6 +64,10 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print ("You have %s health potions left!" % HP_Potions)
 
+                if Player_HP > 100:
+
+                    Player_HP = 100
+
                 print ("You now have %s health left." % Player_HP)
 
             else:
@@ -87,6 +91,10 @@ while Player_HP > 0 and Monster_HP > 0:
                 Mana_Potions = Mana_Potions - 1
 
                 print ("You have %s mana potions left!" % Mana_Potions)
+
+                if Player_Mana > 100:
+
+                    Player_Mana = 100
 
                 print ("You now have %s mana left in you." % Player_Mana)
 
@@ -141,6 +149,54 @@ while Player_HP > 0 and Monster_HP > 0:
                 print("You now have %s health left" % Player_HP)
 
                 print("You now have %s mana left in you" % Player_Mana)
+
+    if Player_Action == ("Star Platinum!!!"):
+
+        print("ORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORA!!!!!!!!!!")
+
+        STAR_PLATINUM = random.uniform(100,150)
+
+        STAR_PLATINUM = int(STAR_PLATINUM)
+
+        Monster_HP = Monster_HP - STAR_PLATINUM
+
+        print("You used Star Platinum to pummel the monster for %s damage!!!" % STAR_PLATINUM)
+
+        print("The monster has %s health left!" % Monster_HP)
+
+    if Player_Action == ("Killer Queen!!!"):
+
+        print("BITEZ ZA DUSTO!!!")
+
+        time.sleep(1)
+
+        print("BOOM!!!")
+
+        BITEZ_ZA_DUSTO = random.uniform(50,75)
+
+        BITEZ_ZA_DUSTO = int(BITEZ_ZA_DUSTO)
+
+        Monster_HP = Monster_HP - BITEZ_ZA_DUSTO
+
+        print("The bomb dealt %s damage to the monster!" % BITEZ_ZA_DUSTO)
+
+        time.sleep(2)
+
+        print("I... I did it! It activated!")
+
+        time.sleep(1)
+
+        Player_HP = Player_HP + BITEZ_ZA_DUSTO
+
+        if Player_HP > 100:
+
+            Player_HP = 100
+
+        print("You rewind a brief period back in time but the damage done the monster is still there, due to this you also heal %s damage from yourself!" % BITEZ_ZA_DUSTO)
+
+        print("You have %s health left." % Player_HP)
+
+        print("The monster has %s health left." % Monster_HP)
                 
     if Monster_HP <= 0:
 
