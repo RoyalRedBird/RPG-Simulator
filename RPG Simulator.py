@@ -4,14 +4,19 @@ import random
 
 import time
 
+#Player_HP represents the ammount of health the player (ie, you) has, if it falls to zero, you lose.
 Player_HP = 100
 
+#Player_Mana represents the ammount of mana you have, mana is used to cast spells.
 Player_Mana = 100
 
+#MonsterHP represents the ammount of health the monster has, if it falls to zero, you win.
 Monster_HP = 150
 
+#HP_Potions represents the ammount of health recovery potions you have.
 HP_Potions = 3
 
+#Mana_Potions represents the ammount of mana recovery potions you have.
 Mana_Potions = 3
 
 Player_Item = ("None")
@@ -34,6 +39,8 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print ("The monster has %s health left!" % Monster_HP)
 
+        #Typing in "Attack" will deal between 10 to 15 damage to the monster.
+
     if Player_Action == ("Block"):
 
         Player_Block = random.uniform(4,8)
@@ -42,9 +49,15 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print ("You brace yourself...")
 
+        #Typing in "Block" will reduce 4 to 8 damage from the monsters next attack.
+
     if Player_Action == ("Use"):
 
+        #Typing in "Use" will use an item of your choice.
+
         Player_Item = input("What item wil you use?")
+
+        #
 
         if Player_Item == ("HP Potion"):
 
@@ -154,6 +167,8 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print("ORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORA!!!!!!!!!!")
 
+        time.sleep(1.5)
+
         STAR_PLATINUM = random.uniform(100,150)
 
         STAR_PLATINUM = int(STAR_PLATINUM)
@@ -168,7 +183,11 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print("BITEZ ZA DUSTO!!!")
 
-        time.sleep(1)
+        time.sleep(0.5)
+
+        print("*Click.*")
+
+        time.sleep(0.75)
 
         print("BOOM!!!")
 
@@ -197,6 +216,82 @@ while Player_HP > 0 and Monster_HP > 0:
         print("You have %s health left." % Player_HP)
 
         print("The monster has %s health left." % Monster_HP)
+
+    if Player_Action == ("The World!!!"):
+
+        print("ZA WARUDO!!! Stop Time!!!")
+
+        time.sleep(0.5)
+
+        print("Time has stoped.")
+
+        time.sleep(3)
+
+        print("One second has elapsed...")
+
+        time.sleep(2)
+
+        print("Two seconds have elapsed...")
+
+        time.sleep(2)
+
+        print("Three seconds have elapsed.")
+
+        time.sleep(2)
+
+        print("Four seconds have elapsed...")
+
+        time.sleep(2)
+
+        print("Five seconds have elapsed...")
+
+        time.sleep(2)
+
+        print("Six seconds have elapsed...")
+
+        time.sleep(2)
+
+        print("Seven seconds have elapsed...")
+
+        time.sleep(2.5)
+
+        print("...")
+
+        time.sleep(1)
+
+        print("ROAD ROLLER!!!!!!!!!!")
+
+        time.sleep(1.5)
+
+        print("CRASH!!!!!!!")
+
+        time.sleep(1)
+
+        print("MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!! MUDA!!!") 
+
+        print("EIGHT SECONDS HAVE ELAPSED!!!")
+
+        time.sleep(1)
+
+        print("WWRRYYYYYYYYYY!!!!!!")
+
+        time.sleep(1)
+
+        print("I'LL SMASH YOU FLAT!!!")
+
+        time.sleep(1)
+
+        print("*SMASH!!!*")
+
+        ZA_WARUDO = random.uniform(500,1000)
+
+        ZA_WARUDO = int(ZA_WARUDO)
+
+        print('In the end, "The World" had dealt %s damage to the mosnter!' % ZA_WARUDO)
+
+        Monster_HP = Monster_HP - ZA_WARUDO
+
+        print("The monster has %s HP left." % Monster_HP)       
                 
     if Monster_HP <= 0:
 
