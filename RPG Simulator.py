@@ -19,13 +19,14 @@ HP_Potions = 3
 #Mana_Potions represents the ammount of mana recovery potions you have.
 Mana_Potions = 3
 
-Player_Item = ("None")
-
-Player_Cast = ("None")
+#While the HP of the Player or the Monster remains above zero, everything in the while loop will continue to play until either
+#the player or the monster... Bites the dust...
 
 while Player_HP > 0 and Monster_HP > 0:
 
-    Player_Action = input("What will you do?")
+    Player_Action = input('What will you do? You can either "Attack", "Block", "Use" an item or "Cast" a spell.')
+
+    #Player_Action will ask the player what he/she will do with a text prompt.
 
     if Player_Action == ("Attack"):
 
@@ -33,13 +34,13 @@ while Player_HP > 0 and Monster_HP > 0:
 
         Player_Damage = int(Player_Damage)
 
+        #Typing in "Attack" will deal between 10 to 15 damage to the monster.
+
         print ("You dealt %s damage!" % Player_Damage)
 
         Monster_HP = Monster_HP - Player_Damage
 
         print ("The monster has %s health left!" % Monster_HP)
-
-        #Typing in "Attack" will deal between 10 to 15 damage to the monster.
 
     if Player_Action == ("Block"):
 
@@ -55,13 +56,21 @@ while Player_HP > 0 and Monster_HP > 0:
 
         #Typing in "Use" will use an item of your choice.
 
-        Player_Item = input("What item wil you use?")
+        print("You have %s HP Potions left." % HP_Potions)
 
-        #
+        print("You have %s potions left." % Mana_Potions)
+
+        Player_Item = input('What item wil you use? You can use an "HP Potion" or a "Mana Potion".')
+
+        #Player_Item will ask the player what he/she wants to use with a text prompt.
 
         if Player_Item == ("HP Potion"):
 
+            #Typing in "HP Potion" will consume an HP Potion (provided that you have at least one), regenerating 20 to 30 health.
+
             if HP_Potions > 0:
+
+                #If you don't have any HP Potions, it will do nothing.
 
                 print ("You drink a health potion.")
 
@@ -79,17 +88,25 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 if Player_HP > 100:
 
+                    #If the ammount of HP regenerated brings your total HP above 100, it will reset your health to 100.
+
                     Player_HP = 100
 
                 print ("You now have %s health left." % Player_HP)
 
             else:
 
+                #The following text is printed if you attenmt to use an HP Potion when you don't have any.
+
                 print ("You are all out of health potions!")
 
         if Player_Item == ("Mana Potion"):
 
+            #Typing in "Mana Potion" will consume a mana potion (if you have one), regenerating 20 to 30 mana.
+
             if Mana_Potions > 0:
+
+                #If you have zero mana potions, nothing happens.
 
                 print ("You drink a mana potion.")
 
@@ -107,21 +124,35 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 if Player_Mana > 100:
 
+                    #If the ammount of mana regenerated brings your total mana above 100, it will reset the mana value to 100.
+
                     Player_Mana = 100
 
                 print ("You now have %s mana left in you." % Player_Mana)
 
             else:
 
+                #The following text is printed if you try to use a mana potion without having any.
+
                 print ("You are all out of mana potions!")
 
     if Player_Action == ("Cast"):
 
-        Player_Cast = input("What spell will you cast?")
+        #Typing in "Cast" will cast a spell of your choice.
+
+        print("You have %s mana left." % Player_Mana)
+
+        Player_Cast = input('What spell will you cast? You can cast a "Fireball" or "Regen".')
+
+        #Player_Cast will ask the player what spell he/she wishes to cast using a text prompt.
 
         if Player_Cast == ("Fireball"):
 
+            #Typing in "Fireball" will cast a fireball at the monster, dealing between 20 and 35 damage and costing you 20 mana.
+
             if Player_Mana >= 20:
+
+                #If you have 20 mana or more, the spell will cast.
 
                 print("You cast a fireball!")
 
@@ -141,11 +172,17 @@ while Player_HP > 0 and Monster_HP > 0:
 
             else:
 
+                #The following text is printed if you don't have enough mana to cast a fireball.
+
                 print("You don't have enough mana.")
 
         if Player_Cast == ("Regen"):
 
+            #Typing in "Regen" (short for "Regenerate") will heal you 30 to 50 health, at the cost of 40 mana.
+
             if Player_Mana >= 40:
+
+                #If you have 40 mana or more the spell will cast.
 
                 print("You heal yourself using magic.")
 
@@ -163,7 +200,27 @@ while Player_HP > 0 and Monster_HP > 0:
 
                 print("You now have %s mana left in you" % Player_Mana)
 
+            else:
+
+                #The following text prints if you don't have enough mana.
+
+                print("You don't have enough mana.")
+
+    #The following Player_Action prompts are easter eggs, meant to be kept out of the spotlight to be found. But for now, I will
+    #comment on these easter eggs.
+
     if Player_Action == ("Star Platinum!!!"):
+
+        #Typing in "Star Platinum!!!" will summon the stand know as such, he will proceed to pummel the monster with a punching rate
+        #faster than any firearm you can think of, (and certainly faster then you or me could punch) dealing between 100 to 150 damage.
+
+        #For more information on Star Platinum, I will direct you to the following links.
+        # https://www.youtube.com/watch?v=OzHE5q1NGa4
+        # http://jojo.wikia.com/wiki/Star_Platinum
+
+        print("STAR PLATINUM!!!")
+
+        time.sleep(0.5)
 
         print("ORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORAORA!!!!!!!!!!")
 
@@ -180,6 +237,18 @@ while Player_HP > 0 and Monster_HP > 0:
         print("The monster has %s health left!" % Monster_HP)
 
     if Player_Action == ("Killer Queen!!!"):
+
+        #Typing in "Killer Queen!!!" will summon said stand, he will proceed to use the ability "Bites the Dust" to turn the monster into a bomb and proceed to detonate
+        #the bomb, dealing 50 to 75 damage. As a result of this, tile will reverse back to a certain point in time, however, the damage is already done and
+        #you heal for the same ammount of damage the bomb does.
+
+        #For more information on Killer Queen, I will direct you to the following links.
+        # https://www.youtube.com/watch?v=fiwcZ0pg3xM
+        # http://jojo.wikia.com/wiki/Killer_Queen
+
+        print("KILLER QUEEN!!!")
+        
+        time.sleep(1)
 
         print("BITEZ ZA DUSTO!!!")
 
@@ -218,6 +287,17 @@ while Player_HP > 0 and Monster_HP > 0:
         print("The monster has %s health left." % Monster_HP)
 
     if Player_Action == ("The World!!!"):
+
+        #Typing in "The World!!!" will summon the mentioned stand, "The World" will proceed to stop time for nine seconds, after seven
+        #seconds, "The World" will smash a steamroller onto the monster, and then proced to punch the steam roller with a punch rate
+        #similar to Star Platinm. This move will deal 500 to 1000 damage, effectively killing the monster in one blow.
+
+        #Note: The word "Muda" (Japanese: 無駄) means "Useless".
+
+        #For more information on "The World", I will direct you to the following links.
+        # https://www.youtube.com/watch?v=-FT23AwNPOM
+        # http://jojo.wikia.com/wiki/The_World
+        
 
         print("ZA WARUDO!!! Stop Time!!!")
 
@@ -295,11 +375,15 @@ while Player_HP > 0 and Monster_HP > 0:
                 
     if Monster_HP <= 0:
 
+        #If the monster has zero HP or less, the loop breaks.
+
         break
 
     print ("Get Ready!")
 
     time.sleep(2)
+
+    #When it is the monsters turn, the monster will deal between 5 and 20 damage to the player.
 
     Monster_Damage = random.uniform(5,20)
 
@@ -308,6 +392,8 @@ while Player_HP > 0 and Monster_HP > 0:
     print ("The monster hit you for %s damage!" % Monster_Damage)
 
     if Player_Action == ("Block"):
+
+        #If the player is blocking, the monsters damage will be reduced by the ammount of the "Block" variable.
 
         print ("However, you block for %s damage!" % Player_Block)
 
@@ -321,6 +407,8 @@ while Player_HP > 0 and Monster_HP > 0:
 
     if Player_HP <= 0:
 
+        #If the player has zero HP or less, the loop breaks.
+
         break
 
     print ("Compose yourself.")
@@ -329,8 +417,12 @@ while Player_HP > 0 and Monster_HP > 0:
 
 if Monster_HP <= 0:
 
+    #If the monster has zero HP or less, the monster dies and you have won the day!
+
     print ("Huzzah! The foul beast is slain!")
 
 if Player_HP <= 0:
+
+    #If the player has zero HP or less, you die a painful, slow and bitter death.
 
     print ("Your journey has come to a painful, sombre end...")
