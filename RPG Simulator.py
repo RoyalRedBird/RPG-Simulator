@@ -1,3 +1,5 @@
+#RPG Simulator, Made by Ethan "RoyalRedBird" Powell, Finalized on November 28, 2017.
+
 print ("Welcome to the RPG combat simulator!")
 
 import random
@@ -30,11 +32,11 @@ while Player_HP > 0 and Monster_HP > 0:
 
     if Player_Action == ("Attack"):
 
+        #Typing in "Attack" will deal between 10 to 15 damage to the monster.
+
         Player_Damage = random.uniform(10,15)
 
         Player_Damage = int(Player_Damage)
-
-        #Typing in "Attack" will deal between 10 to 15 damage to the monster.
 
         print ("You dealt %s damage!" % Player_Damage)
 
@@ -42,15 +44,17 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print ("The monster has %s health left!" % Monster_HP)
 
+
     if Player_Action == ("Block"):
+
+        #Typing in "Block" will reduce 4 to 8 damage from the monsters next attack.
 
         Player_Block = random.uniform(4,8)
 
         Player_Block = int(Player_Block)
 
         print ("You brace yourself...")
-
-        #Typing in "Block" will reduce 4 to 8 damage from the monsters next attack.
+        
 
     if Player_Action == ("Use"):
 
@@ -135,6 +139,7 @@ while Player_HP > 0 and Monster_HP > 0:
                 #The following text is printed if you try to use a mana potion without having any.
 
                 print ("You are all out of mana potions!")
+                
 
     if Player_Action == ("Cast"):
 
@@ -209,6 +214,8 @@ while Player_HP > 0 and Monster_HP > 0:
     #The following Player_Action prompts are easter eggs, meant to be kept out of the spotlight to be found. But for now, I will
     #comment on these easter eggs.
 
+    #All of the easter egg attacks are based off the anime "JoJo's Bizarre Adventure".
+
     if Player_Action == ("Star Platinum!!!"):
 
         #Typing in "Star Platinum!!!" will summon the stand know as such, he will proceed to pummel the monster with a punching rate
@@ -246,9 +253,9 @@ while Player_HP > 0 and Monster_HP > 0:
         # https://www.youtube.com/watch?v=fiwcZ0pg3xM
         # http://jojo.wikia.com/wiki/Killer_Queen
 
-        print("KILLER QUEEN!!!")
+        print("KILLER QUEEN!!! THIRD BOMB!!!")
         
-        time.sleep(1)
+        time.sleep(1.5)
 
         print("BITEZ ZA DUSTO!!!")
 
@@ -272,7 +279,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         print("I... I did it! It activated!")
 
-        time.sleep(1)
+        time.sleep(3)
 
         Player_HP = Player_HP + BITEZ_ZA_DUSTO
 
@@ -315,7 +322,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         time.sleep(2)
 
-        print("Three seconds have elapsed.")
+        print("Three seconds have elapsed...")
 
         time.sleep(2)
 
@@ -343,7 +350,7 @@ while Player_HP > 0 and Monster_HP > 0:
 
         time.sleep(1.5)
 
-        print("CRASH!!!!!!!")
+        print("*CRASH!!!!!!!*")
 
         time.sleep(1)
 
